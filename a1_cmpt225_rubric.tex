@@ -1,0 +1,136 @@
+% ------------------------------------------------------------------
+% CMPT 225 -- Assignment 1: Student Marking Rubric (one page, Letter)
+% Compile with pdfLaTeX (Overleaf default). No extra files required.
+% ------------------------------------------------------------------
+\documentclass[10pt]{article}
+
+% ---------- Page and fonts ----------
+\usepackage[letterpaper,top=0.5in,bottom=0.5in,left=0.55in,right=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- Tables, colour, lists ----------
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+
+\definecolor{hdr}{HTML}{2F3E4E}
+\definecolor{tint}{HTML}{E8EDF2}
+\definecolor{band}{HTML}{F5F7F9}
+\definecolor{gridgray}{HTML}{9AA5B1}
+\arrayrulecolor{gridgray}
+
+% ---------- Helpers ----------
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcommand{\hw}[1]{\textcolor{white}{\textbf{#1}}}
+\newcommand{\hcell}[2]{\hw{#1}\newline{\footnotesize\textcolor{white}{#2}}}
+\newcommand{\crit}[2]{\cellcolor{tint}\textbf{#1}\newline{\footnotesize\itshape #2}}
+\newcommand{\sectionlabel}[1]{{\bfseries\color{hdr}#1}\par\vspace{2pt}}
+
+\begin{document}
+
+% ---------- Title ----------
+\noindent{\LARGE\bfseries CMPT 225 Assignment 1 Rubric\par}
+% ---------- Marking criteria ----------
+\sectionlabel{}
+{\small
+\noindent\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.16\textwidth}|*{4}{L|}}
+\hline
+\rowcolor{hdr}
+\hw{Criterion}
+  & \hcell{Full credit}{complete and correct}
+  & \hcell{Most credit}{minor flaws only}
+  & \hcell{Partial credit}{significant gaps}
+  & \hcell{Little or no credit}{missing or mostly wrong} \\
+\hline
+
+\crit{Correctness}{Applies to: all parts}
+  & Every requested item is correct and clearly stated; nothing required is missing.
+  & Correct in substance, with one small slip that does not change the main result.
+  & Some items are correct, but a significant error or omission affects the result.
+  & Mostly incorrect, off topic, or blank. \\
+\hline
+
+\crit{Reasoning and work shown}{Applies to: any justification or explanation}
+  & A complete, logical argument; every step supports the answer; length and form match what is asked.
+  & Sound reasoning with one small gap or skipped step that is easy to fill in.
+  & Vague or partly incorrect, or the answer is restated without support.
+  & No supporting work, or the work contradicts the answer. \\
+\hline
+
+\crit{Definitions, notation and conventions}{Applies to: A, C, D2--D3}
+  & Definitions are precise and complete; symbols and stated conventions are used correctly.
+  & Precise apart from one small omission or an inconsistent symbol.
+  & The idea is recognizable but stated loosely, or conventions are applied inconsistently.
+  & The definition is incorrect, or notation is misused so that the meaning is lost. \\
+\hline
+
+\crit{Complexity analysis}{Applies to: C1, D2--D3, E2, G1}
+  & Uses the right variable, and is justified as required.
+  & Correct bound, with a small flaw in the supporting argument.
+  & The bound is valid but stated convention is ignored.
+  & The bound is incorrect, unsupported, or missing. \\
+\hline
+
+\crit{Diagrams}{Applies to: D1(a), E1(a)--(b), E3(a)}
+  & All required nodes and references drawn, correctly directed and labelled; null shown as $\varnothing$.
+  & Structure is right apart from one missing or misdirected arrow, or a missing label.
+  & Several references are wrong or missing, or the drawing is ambiguous.
+  & The structure is fundamentally wrong, or not drawn as boxes and arrows. \\
+\hline
+
+\crit{Code}{Applies to: D3(a), E2, E3(c), G1(b)}
+  & Correct in general and for each special case named; meets every stated constraint.
+  & Correct overall, with one minor defect in a special case.
+  & A reasonable idea, but it fails on some inputs or breaks a stated constraint.
+  & The approach would not work, is unrelated to the question, or is missing. \\
+\hline
+
+\crit{Tracing and debugging}{Applies to: D1, D3(c), E3}
+  & State is tracked accurately, step by step; a fault's cause and effect are explained.
+  & One step is mis-tracked, but the rest of the trace is sound.
+  & Tracing is partly correct, or a fault's symptoms are described without its cause.
+  & State is not tracked, or the conclusions do not match the code given. \\
+\hline
+
+\crit{Clarity and presentation}{Applies to: all parts}
+  & Answers are labelled by question number, legible and concise; code is indented and readable.
+  & Occasional lapses that do not hinder reading.
+  & Hard to follow in places; the marker must guess at your intent.
+  & Illegible or disorganized, so credit cannot be assigned. \\
+\hline
+\end{tabularx}}
+\vspace{9pt}
+
+% ---------- Marking notes ----------
+\sectionlabel{How marks are awarded}
+{\small
+\begin{itemize}[leftmargin=1.1em,itemsep=1pt,topsep=1pt,parsep=0pt,partopsep=0pt]
+  \item Where a question splits its marks into labelled components (for example, a verdict and its justification, or running time and space), each component is assessed separately against the criteria above.
+  \item A correct final answer without the requested justification or work earns only part of the marks.
+  \item Code may be written in Java or in clear Java-like pseudocode. Use only the library classes a question explicitly allows.
+\end{itemize}}
+\vspace{8pt}
+
+% ---------- Self-check ----------
+\noindent\fcolorbox{gridgray}{band}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{\small\raggedright
+\textbf{Before you submit:}\hspace{0.8em}%
+\mbox{$\square$~every sub-part answered and labelled}\hspace{0.8em}%
+\mbox{$\square$~work shown where requested}\hspace{0.8em}%
+\mbox{$\square$~stated conventions followed}\hspace{0.8em}%
+\mbox{$\square$~special cases checked in your code}\hspace{0.8em}%
+\mbox{$\square$~name and student ID filled in}}}
+
+\end{document}
